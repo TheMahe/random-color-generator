@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Color Generator</title>
+    <title>Brutalist Color Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Color Generator</h1>
-        <button id="solidColorBtn">Generate Solid Color</button>
-        <button id="lighterColorBtn">Generate Lighter Shade</button>
-        <button id="darkerColorBtn">Generate Darker Shade</button>
-        <div id="colorDisplay"></div>
+        <h1>Brutalist Color Generator</h1>
+        <div class="color-section">
+            <button id="solidColorBtn">Generate Solid Color</button>
+            <div id="solidColorDisplay" class="color-display"></div>
+        </div>
+        <div class="color-section">
+            <button id="lighterColorBtn">Generate Lighter Shade</button>
+            <div id="lighterColorDisplay" class="color-display"></div>
+        </div>
+        <div class="color-section">
+            <button id="darkerColorBtn">Generate Darker Shade</button>
+            <div id="darkerColorDisplay" class="color-display"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
