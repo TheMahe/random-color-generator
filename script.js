@@ -1,5 +1,8 @@
+let currentBaseColor = '';
+
 function generateRandomColor() {
-    return '#' + Math.floor(Math.random()*16777215).toString(16);
+    currentBaseColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    return currentBaseColor;
 }
 
 function lightenDarkenColor(col, amt) {
@@ -26,20 +29,18 @@ function lightenDarkenColor(col, amt) {
 
 document.getElementById('solidColorBtn').addEventListener('click', function() {
     var color = generateRandomColor();
-    document.getElementById('colorDisplay').style.backgroundColor = color;
-    document.getElementById('colorDisplay').innerText = color;
+    document.getElementById('solidColorDisplay').style.backgroundColor = color;
+    document.getElementById('solidColorDisplay').innerText = color;
 });
 
-document.getElementById('lighterColorBtn').addEventListener('click',function() {
-    var baseColor = generateRandomColor();
-    var lighterColor = lightenDarkenColor(baseColor, 40);
-    document.getElementById('colorDisplay').style.backgroundColor = lighterColor;
-    document.getElementById('colorDisplay').innerText = lighterColor;
-    });
+document.getElementById('lighterColorBtn').addEventListener('click', function() {
+    var lighterColor = lightenDarkenColor(currentBaseColor, 40);
+    document.getElementById('lighterColorDisplay').style.backgroundColor = lighterColor;
+    document.getElementById('lighterColorDisplay').innerText = lighterColor;
+});
     
-    document.getElementById('darkerColorBtn').addEventListener('click', function() {
-    var baseColor = generateRandomColor();
-    var darkerColor = lightenDarkenColor(baseColor, -40);
-    document.getElementById('colorDisplay').style.backgroundColor = darkerColor;
-    document.getElementById('colorDisplay').innerText = darkerColor;
+document.getElementById('darkerColorBtn').addEventListener('click', function() {
+    var darkerColor = lightenDarkenColor(currentBaseColor, -40);
+    document.getElementById('darkerColorDisplay').style.backgroundColor = darkerColor;
+    document.getElementById('darkerColorDisplay').innerText = darkerColor;
     });
